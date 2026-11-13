@@ -1,16 +1,16 @@
 # 🎯 Internship Application Tracker & Pipeline (120+ Companies)
 **Candidate:** Jitam Barman | **Institute:** IIT Kharagpur (Dual Degree 5Y, Metallurgical + CS Minor + AI Micro-spec)  
 **Domains:** Data Science, ML/DL, GenAI/LLMs, NLP/CV, Analytics, Quant  
-**Total Target Companies Tracked:** **123**  
-**Last Updated:** 13 Nov 2026, 22:40 IST
+**Total Target Companies Tracked:** **125**  
+**Last Updated:** 13 Nov 2026, 17:53 IST
 
 ---
 
 ## 📊 Quick Pipeline Breakdown
-- **1. GenAI, LLMs, NLP & Frontier AI Startups / Labs**: 22 companies
+- **1. GenAI, LLMs, NLP & Frontier AI Startups / Labs**: 23 companies
 - **2. Mid-Tier Consumer Tech, Logistics & Quick Commerce**: 24 companies
 - **3. FinTech, InsurTech, Payments & Neobanks**: 20 companies
-- **4. B2B SaaS, DevTech & Enterprise Cloud Tech**: 15 companies
+- **4. B2B SaaS, DevTech & Enterprise Cloud Tech**: 16 companies
 - **5. Pure-Play AI & Analytics Consultancies**: 11 companies
 - **6. Tier 1 Global Tech MNCs & R&D Hubs**: 17 companies
 - **7. Quant Research, High-Frequency Trading & Global FinTech**: 14 companies
@@ -29,7 +29,7 @@
 
 ---
 
-## 🚀 1. GenAI, LLMs, NLP & Frontier AI Startups / Labs (22 Companies)
+## 🚀 1. GenAI, LLMs, NLP & Frontier AI Startups / Labs (23 Companies)
 *Focus: Indic foundation models, agentic workflows (LangGraph), multi-modal LLMs, and vector search.*
 
 | Company | Role | Domain | Location | Recommended Resume | Status | Link |
@@ -56,6 +56,7 @@
 | **Hugging Face** | Open Source ML Intern | `Open Source AI / Transformers` | Remote | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://huggingface.co/join-us) |
 | **Together AI** | Systems ML / Cloud Intern | `GPU Optimization / Fast Inference` | Remote | **v1 (C++/Quant)** | `Identified` | [Apply / View](https://boards.greenhouse.io/togetherai) |
 | **KOGO OS** | AI Agents & Workflow Intern | `Autonomous Agents / LangGraph` | Bengaluru | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://kogo.ai/careers) |
+| **Enterpret** | Machine Learning Intern | `Data Science / ML / AI` | Bengaluru | **v2 (GenAI/ML)** | `New - Review` | [Apply / View](https://job-boards.greenhouse.io/enterpret/jobs/7723230003) |
 
 ## 🛵 2. Mid-Tier Consumer Tech, Logistics & Quick Commerce (24 Companies)
 *Focus: Dispatch algorithms, route optimization, dynamic pricing, and spatio-temporal GNNs.*
@@ -113,7 +114,7 @@
 | **INDmoney** | Data Analyst / ML Intern | `Portfolio Analytics / Financial Tracking` | Gurugram / Bengaluru | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://www.indmoney.com/careers) |
 | **smallcase** | Quantitative Research / Analytics Intern | `Factor Investing / Stock Baskets` | Bengaluru | **v1 (C++/Quant)** | `Identified` | [Apply / View](https://smallcase.com/careers) |
 
-## ☁️ 4. B2B SaaS, DevTech & Enterprise Cloud Tech (15 Companies)
+## ☁️ 4. B2B SaaS, DevTech & Enterprise Cloud Tech (16 Companies)
 *Focus: API telemetry, test cloud ML, high-volume ad tech, and conversational SaaS agents.*
 
 | Company | Role | Domain | Location | Recommended Resume | Status | Link |
@@ -133,6 +134,7 @@
 | **Darwinbox** | Data Science / Analytics Intern | `Talent Analytics / People ML` | Hyderabad | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://darwinbox.com/careers) |
 | **Whatfix** | Data Analyst / ML Intern | `User Behavior Analytics / Walkthrough ML` | Bengaluru | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://whatfix.com/careers) |
 | **Sprinklr** | NLP / Data Science Intern | `Social NLP / Sentiment Analysis` | Gurugram / Bengaluru | **v2 (GenAI/ML)** | `Identified` | [Apply / View](https://www.sprinklr.com/careers) |
+| **Rubrik** | Payroll Industrial Trainee | `Data Science / ML / AI` | Bangalore | **v1 (C++/Quant)** | `New - Review` | [Apply / View](https://www.rubrik.com/company/careers/departments/job.8305308?gh_jid=8305308) |
 
 ## 📊 5. Pure-Play AI & Analytics Consultancies (11 Companies)
 *Focus: Applied statistics, decision sciences, enterprise AI delivery, and industrial digital twins.*
