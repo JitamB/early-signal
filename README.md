@@ -1,10 +1,10 @@
-# 🎯 Automated Internship Sourcing & Application Pipeline
+# Automated Internship Sourcing & Application Pipeline
 **Candidate:** Jitam Barman | **Institute:** IIT Kharagpur (Dual Degree 5Y, Metallurgical + CS Minor + AI Micro-spec)  
 **Domains:** Data Science, Machine Learning, Deep Learning, GenAI/LLMs, NLP, Computer Vision, Analytics, Quant
 
 ---
 
-## ⚡ Architecture & Cloud Automation
+## Architecture & Cloud Automation
 
 This repository runs completely in the cloud with **zero local hardware dependency**:
 1. **GitHub Actions Cron:** Executes automated scans twice a day (09:00 AM & 06:00 PM IST) on an Ubuntu runner.
@@ -14,13 +14,13 @@ This repository runs completely in the cloud with **zero local hardware dependen
 
 ---
 
-## 📊 Live Tracker & Company Roster
+## Live Tracker & Company Roster
 All 120+ target companies, roles, application URLs, and resume assignments are tracked in:
-👉 **[TRACKER.md](TRACKER.md)**
+**[TRACKER.md](TRACKER.md)**
 
 ---
 
-## 📱 Triggering from Your Phone
+## Triggering from Your Phone
 You don't need a computer to run a fresh scan:
 1. Open this repository on the **GitHub Mobile App** or mobile browser.
 2. Go to **Actions** $\rightarrow$ **Daily Internship Scanner & ntfy Alert**.
