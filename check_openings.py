@@ -160,15 +160,15 @@ def scan_ats(notify=False):
                     
                     if notify:
                         msg = (
-                            f"🏢 Company: {company_name}\n"
-                            f"💼 Role: {title}\n"
-                            f"📍 Location: {loc or 'India / Remote'}\n"
-                            f"📄 Recommended Resume: {resume}\n"
-                            f"🔗 Direct Link: {job_url}"
+                            f"Company: {company_name}\n"
+                            f"Role: {title}\n"
+                            f"Location: {loc or 'India / Remote'}\n"
+                            f"Recommended Resume: {resume}\n"
+                            f"Direct Link: {job_url}"
                         )
                         send_ntfy(
                             message=msg,
-                            title=f"🎯 New Opening: {company_name}",
+                            title=f"🎯 New Opening: {company_name} | {title}",
                             click_url=job_url,
                             priority="high",
                             tags="briefcase,rocket,star"
@@ -373,8 +373,8 @@ def main():
         cfg = load_config()
         print(f"[*] Sending test push notification to ntfy topic: '{cfg['ntfy_topic']}'...")
         success = send_ntfy(
-            message=f"🚀 Test alert from your IIT Kharagpur Internship Tracker at {datetime.now().strftime('%H:%M:%S IST')}!\n123 target companies active.",
-            title="🎯 Internship Tracker Test Ping",
+            message=f"Test alert from your IIT Kharagpur Internship Tracker at {datetime.now().strftime('%H:%M:%S IST')}!\n123 target companies active.",
+            title="Internship Tracker Test Ping",
             click_url="https://github.com/JitamB",
             priority="high",
             tags="bell,rocket"
