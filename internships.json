@@ -2104,5 +2104,41 @@
     "match_score": 90,
     "recommended_resume": "v2 (Data Science & Statistics)",
     "notes": "Renowned Decision Sciences Center of Excellence in Gurugram. Heavy focus on hypothesis testing, A/B testing & ML."
+  },
+  {
+    "id": "enterpret-7723230003",
+    "company": "Enterpret",
+    "tier": "Mid-Tier / AI Scaleup",
+    "category": "GenAI & Frontier Labs",
+    "role": "Machine Learning Intern",
+    "domain": "Data Science / ML / AI",
+    "location": "Bengaluru",
+    "season": "Winter / Summer",
+    "ats_type": "greenhouse",
+    "ats_id": "enterpret",
+    "careers_url": "https://boards.greenhouse.io/enterpret",
+    "application_url": "https://job-boards.greenhouse.io/enterpret/jobs/7723230003",
+    "status": "New - Review",
+    "match_score": 88,
+    "recommended_resume": "v2 (GenAI/ML)",
+    "notes": "Discovered via automated ATS scan on 2026-11-13."
+  },
+  {
+    "id": "rubrik-8305308",
+    "company": "Rubrik",
+    "tier": "Mid-Tier / AI Scaleup",
+    "category": "B2B SaaS & DevTech",
+    "role": "Payroll Industrial Trainee",
+    "domain": "Data Science / ML / AI",
+    "location": "Bangalore",
+    "season": "Winter / Summer",
+    "ats_type": "greenhouse",
+    "ats_id": "rubrik",
+    "careers_url": "https://boards.greenhouse.io/rubrik",
+    "application_url": "https://www.rubrik.com/company/careers/departments/job.8305308?gh_jid=8305308",
+    "status": "New - Review",
+    "match_score": 88,
+    "recommended_resume": "v1 (C++/Quant)",
+    "notes": "Discovered via automated ATS scan on 2026-11-13."
   }
 ]
