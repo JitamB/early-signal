@@ -5,3 +5,5 @@ __pycache__/
 .env
 .vscode/
 .idea/
+broadcast_all_to_ntfy.py
+broadcast_sent.json

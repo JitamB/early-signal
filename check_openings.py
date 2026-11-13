@@ -7,6 +7,7 @@ Automated CLI & database to monitor and apply for Data Science, ML/DL, GenAI, an
 import os
 import sys
 import json
+import csv
 import argparse
 from datetime import datetime
 import urllib.request
@@ -14,6 +15,8 @@ import urllib.error
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "internships.json")
 TRACKER_MD_PATH = os.path.join(os.path.dirname(__file__), "TRACKER.md")
+CSV_PATH = os.path.join(os.path.dirname(__file__), "internships.csv")
+XLSX_PATH = os.path.join(os.path.dirname(__file__), "internships.xlsx")
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
 
 DEFAULT_CONFIG = {
@@ -177,7 +180,7 @@ def scan_ats(notify=False):
     if new_findings:
         print(f"\n[+] Total {len(new_findings)} new opening(s) discovered! Updating database...")
         save_db(db)
-        export_markdown()
+        export_all()
     else:
         print("\n[*] Scan complete. No unlisted openings discovered at this moment.")
         if notify and cfg.get("daily_summary"):
@@ -260,7 +263,7 @@ def update_status(job_id, new_status, notes=None):
             break
     if updated:
         save_db(db)
-        export_markdown()
+        export_all()
     else:
         print(f"[-] Could not find entry matching '{job_id}'. Run with --list to view valid IDs or company names.")
 
@@ -344,6 +347,111 @@ def export_markdown():
         f.write(md_content)
     print(f"[+] Markdown tracker successfully updated at: {TRACKER_MD_PATH}")
 
+def export_csv():
+    db = load_db()
+    fields = [
+        "Company", "Category", "Tier", "Role", "Domain", "Location",
+        "Season", "Status", "Recommended Resume", "Application URL", "Notes"
+    ]
+    with open(CSV_PATH, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.writer(f)
+        writer.writerow(fields)
+        for x in db:
+            writer.writerow([
+                x.get("company", ""),
+                x.get("category", ""),
+                x.get("tier", ""),
+                x.get("role", ""),
+                x.get("domain", ""),
+                x.get("location", ""),
+                x.get("season", ""),
+                x.get("status", "Identified"),
+                x.get("recommended_resume", ""),
+                x.get("application_url", ""),
+                x.get("notes", "")
+            ])
+    print(f"[+] CSV tracker successfully updated at: {CSV_PATH}")
+
+def export_xlsx():
+    try:
+        import openpyxl
+        from openpyxl.styles import Font, PatternFill, Alignment
+        from openpyxl.utils import get_column_letter
+
+        db = load_db()
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.title = "Internships"
+
+        headers = [
+            "Company", "Category", "Tier", "Role", "Domain", "Location",
+            "Season", "Status", "Recommended Resume", "Application URL", "Notes"
+        ]
+        ws.append(headers)
+
+        header_font = Font(name="Calibri", size=11, bold=True, color="FFFFFF")
+        header_fill = PatternFill(start_color="1F497D", end_color="1F497D", fill_type="solid")
+        
+        for col_idx in range(1, len(headers) + 1):
+            cell = ws.cell(row=1, column=col_idx)
+            cell.font = header_font
+            cell.fill = header_fill
+            cell.alignment = Alignment(horizontal="center", vertical="center")
+
+        status_colors = {
+            "applied": "C6EFCE",
+            "referral pinged": "FFEB9C",
+            "oa": "BDD7EE",
+            "interview": "E2EFDA",
+            "identified": "F2F2F2",
+            "new - review": "FCE4D6"
+        }
+
+        for row_idx, x in enumerate(db, start=2):
+            app_url = x.get("application_url", "")
+            status = x.get("status", "Identified")
+            row_data = [
+                x.get("company", ""),
+                x.get("category", ""),
+                x.get("tier", ""),
+                x.get("role", ""),
+                x.get("domain", ""),
+                x.get("location", ""),
+                x.get("season", ""),
+                status,
+                x.get("recommended_resume", ""),
+                app_url,
+                x.get("notes", "")
+            ]
+            ws.append(row_data)
+
+            status_cell = ws.cell(row=row_idx, column=8)
+            norm_status = status.strip().lower()
+            if norm_status in status_colors:
+                status_cell.fill = PatternFill(start_color=status_colors[norm_status], end_color=status_colors[norm_status], fill_type="solid")
+
+            url_cell = ws.cell(row=row_idx, column=10)
+            if app_url.startswith("http"):
+                url_cell.hyperlink = app_url
+                url_cell.font = Font(color="0563C1", underline="single")
+
+        for col in ws.columns:
+            max_len = max(len(str(cell.value or "")) for cell in col)
+            col_letter = get_column_letter(col[0].column)
+            ws.column_dimensions[col_letter].width = min(max(max_len + 3, 12), 45)
+
+        wb.save(XLSX_PATH)
+        print(f"[+] Excel (.xlsx) tracker successfully updated at: {XLSX_PATH}")
+    except ImportError:
+        pass
+    except Exception as e:
+        print(f"[-] Note: Could not generate .xlsx: {e}")
+
+def export_all():
+    export_markdown()
+    export_csv()
+    export_xlsx()
+
 def main():
     parser = argparse.ArgumentParser(description="Internship Application Tracker CLI (ntfy.sh Edition)")
     parser.add_argument("--scan", action="store_true", help="Scan ATS boards for new live openings")
@@ -388,11 +496,11 @@ def main():
     elif args.update and args.status:
         update_status(args.update, args.status, args.notes)
     elif args.export:
-        export_markdown()
+        export_all()
     elif args.list or args.category or args.search:
         list_openings(filter_cat=args.category, query=args.search, paginate=not args.all)
     else:
-        export_markdown()
+        export_all()
         list_openings(paginate=not args.all)
 
 if __name__ == "__main__":
