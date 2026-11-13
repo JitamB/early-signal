@@ -17,7 +17,7 @@ TRACKER_MD_PATH = os.path.join(os.path.dirname(__file__), "TRACKER.md")
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.json")
 
 DEFAULT_CONFIG = {
-    "ntfy_topic": "jitam-internships-kgp",
+    "ntfy_topic": "EarlySignal",
     "scan_time": "09:00",
     "notify_on_new": True,
     "daily_summary": True
@@ -51,7 +51,7 @@ def save_db(data):
 
 def send_ntfy(message, title=None, click_url=None, priority="default", tags=None, topic=None):
     cfg = load_config()
-    target_topic = topic or cfg.get("ntfy_topic", "jitam-internships-kgp")
+    target_topic = topic or cfg.get("ntfy_topic", "EarlySignal")
     url = f"https://ntfy.sh/{target_topic}"
     
     headers = {"User-Agent": "InternshipTracker/1.0"}
