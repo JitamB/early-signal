@@ -183,6 +183,7 @@ def scan_ats(notify=False):
         export_all()
     else:
         print("\n[*] Scan complete. No unlisted openings discovered at this moment.")
+        export_all()
         if notify and cfg.get("daily_summary"):
             send_ntfy(
                 message=f"Daily scan finished at {datetime.now().strftime('%H:%M IST')}. {len(db)} target companies monitored. No new unlisted openings today.",
