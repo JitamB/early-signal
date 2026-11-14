@@ -2,10 +2,10 @@ name: 📡 Daily Internship Scanner & ntfy Alert
 
 on:
   schedule:
-    # Runs everyday at 09:00 AM IST (03:30 UTC)
-    - cron: '30 3 * * *'
-    # Optional evening scan at 06:00 PM IST (12:30 UTC)
-    - cron: '30 12 * * *'
+    # Runs everyday around 09:00 AM IST (03:25 UTC - off-peak minute avoids GitHub queue drops)
+    - cron: '25 3 * * *'
+    # Evening scan around 06:00 PM IST (12:25 UTC)
+    - cron: '25 12 * * *'
   # Allows you to trigger the scan manually anytime from your phone or GitHub web UI
   workflow_dispatch:
 

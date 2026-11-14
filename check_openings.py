@@ -185,9 +185,9 @@ def scan_ats(notify=False):
         print("\n[*] Scan complete. No unlisted openings discovered at this moment.")
         if notify and cfg.get("daily_summary"):
             send_ntfy(
-                message=f"Daily scan finished at {datetime.now().strftime('%H:%M IST')}. 123 target companies monitored. No new unlisted openings today.",
+                message=f"Daily scan finished at {datetime.now().strftime('%H:%M IST')}. {len(db)} target companies monitored. No new unlisted openings today.",
                 title="✅ Daily Internship Scan Check-in",
-                priority="low",
+                priority="default",
                 tags="white_check_mark"
             )
 
