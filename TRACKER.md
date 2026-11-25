@@ -2,7 +2,7 @@
 **Candidate:** Jitam Barman | **Institute:** IIT Kharagpur (Dual Degree 5Y, Metallurgical + CS Minor + AI Micro-spec)  
 **Domains:** Data Science, ML/DL, GenAI/LLMs, NLP/CV, Analytics, Quant  
 **Total Target Companies Tracked:** **125**  
-**Last Updated:** 24 Nov 2026, 22:37 IST
+**Last Updated:** 25 Nov 2026, 13:11 IST
 
 ---
 
